@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804a87b41367236488cb2b9031ad6ab4, type: 3}
+  m_Name: StrikeAll
+  m_EditorClassIdentifier: 
+  TargetEffect: 3
+  Characters: 0
+  Description: Deal 2 Damage to all enemies
+  CardImage: {fileID: 21300000, guid: bf91fff4e909c55419e3dcdad9f0135a, type: 3}
+  ManaCost: 0
+  SpellScriptName: Strike All
+  SpellEffectName: DealDamageToTargets
+  specialSpellAmount: 2
+  Targets: 2
+  HowManyTargets: 1
