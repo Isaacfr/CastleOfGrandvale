@@ -31,9 +31,12 @@ public class Character : MonoBehaviour
     public bool incAtk = false;
     public bool decAtk = false;
 
+    Animator animator;
+
     private void Awake()
     {
         SetStats();
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -52,7 +55,7 @@ public class Character : MonoBehaviour
         currentHp -= damage;
         healthSlider.value = currentHp;
 
-       
+        StartCoroutine(EndAnimation());
     }
 
     public void IncreaseAttack(int attackIncrease)
@@ -103,6 +106,24 @@ public class Character : MonoBehaviour
         damageNumberAppear = true;
         StartCoroutine(WaitandDisappear(2.0f, damageNumber.gameObject, damageNumberAppear));
 
+    }
+
+    public void AutoDamage()
+    {
+        StartCoroutine(DealDamageAnimation());
+    }
+    IEnumerator DealDamageAnimation()
+    {
+        animator.SetBool("isAttacking", true);
+        yield return new WaitForSeconds(1.0f);
+        animator.SetBool("isAttacking", false);
+    }
+
+    IEnumerator EndAnimation()
+    {
+        animator.SetBool("isHit", true);
+        yield return new WaitForSeconds(0.8f);
+        animator.SetBool("isHit", false);
     }
 
     IEnumerator WaitandDisappear(float number, GameObject ga, bool a)

@@ -15,7 +15,8 @@ MonoBehaviour:
   TargetEffect: 4
   Characters: 0
   Description: Decrease an Attack of Enemy by 3
-  CardImage: {fileID: 21300000, guid: 37a5e2838151f8e4db83c924b8508505, type: 3}
+  CardImage: {fileID: -1095961631489786984, guid: aa36002e3b4968e4193537612711af46,
+    type: 3}
   ManaCost: 0
   specialSpellAmount: 3
   Targets: 2

@@ -29,6 +29,7 @@ public class BattleSystem : MonoBehaviour
     public CardAsset ca;
 
     public GameObject endTurnButton;
+    public GameObject tutorialEndTurnButton;
 
     void Start()
     {
@@ -80,6 +81,8 @@ public class BattleSystem : MonoBehaviour
             deck.text.text = "You Win!";
             deck.text.gameObject.SetActive(true);
             nextLevelButton.SetActive(true);
+            endTurnButton.SetActive(false);
+
             /*
             StartCoroutine(GainACard());
             */
@@ -102,13 +105,28 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(DoMethods());
         
     }
+
+    public void TutorialEndButton()
+    {
+        deck.BattlePhaseTutorial();
+
+        enemyAttacking = true;
+        alliesAttacking = false;
+        drawingCards = false;
+        tutorialEndTurnButton.SetActive(false);
+        deck.RemoveCardsFromHand();
+        StartCoroutine(DoMethods());
+        deck.CardSelectionPhase();
+        nextLevelButton.SetActive(true);
+    }
+
     IEnumerator DoMethods()
     {
         if (enemyAttacking == true)
         {
-            deck.AppearText("Enemies are attacking!", 6.0f);
+            deck.AppearText("Enemies are attacking!", 20.0f);
             EnemiesAttack();
-            yield return new WaitForSeconds(6.0f);
+            yield return new WaitForSeconds(10.0f);
             enemyAttacking = false;
             alliesAttacking = true;
         }
@@ -116,17 +134,17 @@ public class BattleSystem : MonoBehaviour
 
         if (alliesAttacking == true)
         {
-            deck.AppearText("Allies are retaliating!", 6.0f);
+            deck.AppearText("Allies are retaliating!", 20.0f);
             AlliesAttack();
-            yield return new WaitForSeconds(6.0f);
+            yield return new WaitForSeconds(10.0f);
             alliesAttacking = false;
             drawingCards = true;
         }
 
         if (drawingCards == true)
         {
-            deck.AppearText("Drawing cards...", 8.0f);
-
+            deck.AppearText("Drawing cards...", 9.0f);
+            yield return new WaitForSeconds(1.0f);
             ReplenishAndDraw();
             yield return new WaitForSeconds(8.0f);
             drawingCards = false;
@@ -143,10 +161,12 @@ public class BattleSystem : MonoBehaviour
         enemyDamageValues = new int[enemyCharacters.Count];
         foreach (GameObject enemy in enemyCharacters)
         {
+            
             enemyDamageValues[enemyValue] = enemy.GetComponent<PlayableCharacter>().atkStat;
             enemyValue++;
+           
         }
-
+        StartCoroutine(DelayAutoDamage(enemyCharacters));
         StartCoroutine(WaitForDamage(playerTarget, enemyDamageValues, playerCharacters));
         
     }
@@ -159,18 +179,30 @@ public class BattleSystem : MonoBehaviour
         {
             playerDamageValues[playerValue] = player.GetComponent<PlayableCharacter>().atkStat;
             playerValue++;
+           
         }
-        
+
+        StartCoroutine(DelayAutoDamage(playerCharacters));
 
         StartCoroutine(WaitForDamage(enemyTarget, playerDamageValues,enemyCharacters));
         
+    }
+
+    IEnumerator DelayAutoDamage(List<GameObject> characters)
+    {
+        foreach (GameObject ga in characters)
+        {
+            yield return new WaitForSeconds(1f);
+            ga.GetComponent<PlayableCharacter>().AutoDamage();
+            yield return new WaitForSeconds(2f);
+        }
     }
 
     IEnumerator WaitForDamage(GameObject target, int[] damageValues, List <GameObject> characters)
     {
         foreach (int damage in damageValues)
         {
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(2.5f);
             if(characters[0] == null && characters[1] == null)
             {
                 target = characters[2];

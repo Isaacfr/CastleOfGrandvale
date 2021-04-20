@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public static class KeepingSameDeck
 {
     public static List<CardAsset> sameDeck = new List<CardAsset>();
+    public static int sceneNumber = 0;
 
+    //public static AudioClip audioClip = 
     public static void InitializeStartingDeck(List<CardAsset> cardsOfDeck)
     {
         sameDeck = cardsOfDeck;

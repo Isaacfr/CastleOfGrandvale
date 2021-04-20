@@ -15,7 +15,7 @@ MonoBehaviour:
   TargetEffect: 2
   Characters: 0
   Description: Heal 1 HP to all Allies
-  CardImage: {fileID: 21300000, guid: 7d262402bc8762542babe4c3f007293d, type: 3}
+  CardImage: {fileID: 1072861679542629, guid: aa36002e3b4968e4193537612711af46, type: 3}
   ManaCost: 0
   specialSpellAmount: 1
   Targets: 3

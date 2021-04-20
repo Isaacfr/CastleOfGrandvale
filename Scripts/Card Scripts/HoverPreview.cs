@@ -2,7 +2,6 @@
 using System.Collections;
 using DG.Tweening;
 
-//This is not my code
 public class HoverPreview: MonoBehaviour
 {
     // PUBLIC FIELDS

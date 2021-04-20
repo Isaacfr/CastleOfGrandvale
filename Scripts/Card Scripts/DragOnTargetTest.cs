@@ -95,7 +95,6 @@ public class DragOnTargetTest : DraggingActionsTest
         RaycastHit hitter;
         if (Physics.Raycast(this.transform.position, Vector3.forward * 100f, out hitter))
         {
-            
             if (targets == TargetingOptions.EnemyCharacters)
             {
                 if (hitter.transform.tag == "Ally")
@@ -132,7 +131,7 @@ public class DragOnTargetTest : DraggingActionsTest
                     Destroy(transform.parent.gameObject);
                 }
 
-                else
+                else if (hitter.transform.tag != "Enemy" || hitter.transform.tag != "Ally")
                 {
                     transform.localPosition = new Vector3(0f, 0f, 0.4f);
                     targetRenderer.enabled = false;
@@ -178,7 +177,7 @@ public class DragOnTargetTest : DraggingActionsTest
                     triangleRenderer.enabled = false;
                 }
 
-                else
+                else if(hitter.transform.tag != "Enemy" || hitter.transform.tag != "Ally" )
                 {
                     transform.localPosition = new Vector3(0f, 0f, 0.4f);
                     targetRenderer.enabled = false;
@@ -186,6 +185,14 @@ public class DragOnTargetTest : DraggingActionsTest
                     triangleRenderer.enabled = false;
                 }
             }
+            Debug.Log("hit target is " + hitter.transform.tag);
+        }
+        else
+        {
+            transform.localPosition = new Vector3(0f, 0f, 0.4f);
+            targetRenderer.enabled = false;
+            lineRenderer.enabled = false;
+            triangleRenderer.enabled = false;
         }
         
         // return target and arrow to original position
@@ -193,6 +200,7 @@ public class DragOnTargetTest : DraggingActionsTest
 
 
     }
+
     /*
     private void Update()
     {

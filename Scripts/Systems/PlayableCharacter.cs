@@ -77,7 +77,7 @@ public class PlayableCharacter : Character
                
         }
 
-        if(returnAttack == true)
+        if(returnAttack == true && atkStat != originalAttack)
         {
             IncreaseAttack(originalAttack - atkStat);
             atkStat = originalAttack;
