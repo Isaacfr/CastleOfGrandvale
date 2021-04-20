@@ -89,8 +89,9 @@ GameObject:
   - component: {fileID: 9061883927907752105}
   - component: {fileID: 3047231556036937892}
   - component: {fileID: 4274078671106484055}
+  - component: {fileID: 2827669343102951828}
   m_Layer: 8
-  m_Name: WarriorSprite
+  m_Name: OgreSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,6 +153,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2827669343102951828
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642783823111446394}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 216904e9adb259b46b58726d1bd1f93c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1187683308950416015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,8 +1648,8 @@ MonoBehaviour:
   healthText: {fileID: 7297588014653436619}
   attackText: {fileID: 2849809878020954763}
   defText: {fileID: 883952580275641274}
-  overallHp: 24
-  currentHp: 24
+  overallHp: 30
+  currentHp: 30
   atkStat: 5
   defStat: 5
   damageNumberAppear: 0
@@ -1637,7 +1657,7 @@ MonoBehaviour:
   damageNumber: {fileID: 1873366521121010822}
   healthNumber: {fileID: 2347597788547413635}
   id: 0
-  increaseAttackStat: {fileID: 2347597788547413635}
+  increaseAttackStat: {fileID: 6994549645831434103}
   decreaseAttackStat: {fileID: 6028001152681332522}
   incAtk: 0
   decAtk: 0

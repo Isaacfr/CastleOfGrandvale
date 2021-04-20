@@ -549,7 +549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67bdf09f1d9e87646a0e91dd21b3ec99, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67bdf09f1d9e87646a0e91dd21b3ec99, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4056604, g: 0.24684052, b: 0.24823874, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1291,8 +1291,6 @@ MonoBehaviour:
   CardGraphicImage: {fileID: 7821904424219104167}
   CardBodyImage: {fileID: 5718057846077236485}
   CardFaceFrameImage: {fileID: 5216668508804098836}
-  CardFaceGlowImage: {fileID: 0}
-  CardBackGlowImage: {fileID: 0}
 --- !u!1 &4461421532562882971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,8 +1424,6 @@ MonoBehaviour:
   CardGraphicImage: {fileID: 9185794221170304391}
   CardBodyImage: {fileID: 5953557319965730157}
   CardFaceFrameImage: {fileID: 1740969420004663400}
-  CardFaceGlowImage: {fileID: 0}
-  CardBackGlowImage: {fileID: 0}
 --- !u!65 &674252563679996262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2336,7 +2332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4056604, g: 0.24684052, b: 0.24823874, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
